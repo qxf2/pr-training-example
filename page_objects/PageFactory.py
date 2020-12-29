@@ -7,6 +7,7 @@ Pages implemented so far:
 """
 
 from page_objects.zero_page import Zero_Page
+from page_objects.home_page import Home_Page
 import conf.base_url_conf
 
 
@@ -18,8 +19,8 @@ class PageFactory():
         page_name = page_name.lower()
         if page_name in ["zero","zero page","agent zero"]:
             test_obj = Zero_Page(base_url=base_url)
-        #elif page_name in ["zero mobile","zero mobile page"]:
-            #test_obj = Zero_Mobile_Page()
+        elif page_name in ["home","home page", "main", "main_page"]:
+            test_obj = Home_Page(base_url=base_url)
         return test_obj
 
     get_page_object = staticmethod(get_page_object)
